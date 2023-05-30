@@ -1,0 +1,89 @@
+.header {
+  width: 100%;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #000;
+
+  &-content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .nav {
+      height: 100%;
+      display: flex;
+      align-items: center;
+
+      &-item {
+        height: 100%;
+        padding: 10px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        color: white;
+
+        &:hover {
+          cursor: pointer;
+        }
+      }
+    }
+
+    &-controls {
+      display: flex;
+      align-items: center;
+
+      & > * {
+        height: 80%;
+        padding: 8px;
+        //border-left: 1px solid #fff;
+      }
+
+      .filter {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        color: #fff;
+
+        &:hover {
+          cursor: pointer;
+        }
+
+        & > * {
+          padding: 5px;
+        }
+      }
+
+      .login {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        text-shadow: 0 0 2px #fff;
+
+        a {
+          text-decoration: none;
+          color: #fff;
+        }
+      }
+
+      .trial-btn {
+        button {
+          font-weight: bold;
+          color: #fff;
+          background-color: #c40b1b;
+          padding: 8px 16px;
+          border-radius: 20px;
+        }
+      }
+    }
+  }
+}
+.content {
+  max-width: 1200px;
+}
+.active {
+  background-color: #c40b1b;
+}

@@ -1,0 +1,42 @@
+<div class="content">
+  <div class="movies-cards">
+    <div
+      class="card"
+      *ngFor="
+        let movie of paginationArray
+          | search : value : search : 'title'
+          | yearFilter : yearFilter
+      "
+    >
+      <img [src]="movie.images.posterArt.url" />
+      <div class="overlay">
+        <h3 class="title">{{ movie.title }}</h3>
+        <div class="year">
+          <span>{{ movie.releaseYear }}</span>
+        </div>
+        <div class="description">
+          <p>{{ movie.description }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="paginator">
+    <div class="btn-arrow">
+      <button (click)="goToPrevious()" [disabled]="currentPage === 1"><</button>
+    </div>
+    <div
+      class="btn"
+      *ngFor="let item of getPagesArray()"
+      (click)="goToPage(item)"
+      [ngClass]="{ active: item === currentPage }"
+    >
+      <span>{{ item }}</span>
+    </div>
+    <div class="btn-arrow">
+      <button (click)="goToNext()" [disabled]="currentPage === pagesCount">
+        >
+      </button>
+    </div>
+  </div>
+</div>

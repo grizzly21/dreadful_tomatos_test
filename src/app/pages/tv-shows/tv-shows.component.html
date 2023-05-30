@@ -1,0 +1,30 @@
+<div class="filters" *ngIf="filtersToggle">
+  <div class="filters-content">
+    <div class="search">
+      <div class="icon">
+        <img src="../../../assets/icon-search.png" height="24" width="24" />
+      </div>
+      <input type="text" placeholder="Name" [(ngModel)]="searchText" />
+    </div>
+    <div class="date-picker">
+      <app-year-picker
+        [totalYears]="70"
+        (yearSelected)="onYearSelected($event)"
+      ></app-year-picker>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="content">
+    <div class="content-title">
+      <h2>Popular Movies</h2>
+    </div>
+    <app-cards-paginator
+      [value]="series"
+      [itemsPerPage]="10"
+      [searchText]="searchText"
+      [year]="year"
+    ></app-cards-paginator>
+  </div>
+</div>

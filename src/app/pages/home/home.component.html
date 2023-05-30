@@ -1,0 +1,8 @@
+<div class="card-container">
+  <div class="card" *ngFor="let card of cards" [routerLink]="card.routerLink">
+    <img [src]="card.imageSrc" />
+    <div class="overlay">
+      <p>{{ card.title }}</p>
+    </div>
+  </div>
+</div>

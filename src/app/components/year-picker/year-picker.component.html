@@ -1,0 +1,35 @@
+<div class="year-picker">
+  <div class="input">
+    <div class="seleted-year">Select year</div>
+  </div>
+  <div class="dropdown">
+    <div class="pagination">
+      <button
+        class="btn-arrow"
+        (click)="prevPage()"
+        [disabled]="currentPage === 1"
+      >
+        <
+      </button>
+      <div class="selected-year">
+        {{ sYear !== null ? sYear : 'All' }}
+      </div>
+      <button
+        class="btn-arrow"
+        (click)="nextPage()"
+        [disabled]="currentPage === totalPages"
+      >
+        >
+      </button>
+    </div>
+    <div class="year-list">
+      <div
+        class="year-item"
+        *ngFor="let page of pages"
+        (click)="selectYear(page)"
+      >
+        <p>{{ page }}</p>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,84 @@
+.year-picker {
+  position: relative;
+  height: 100%;
+  padding-left: 14px;
+
+  &:hover {
+    .dropdown {
+      display: block;
+    }
+  }
+
+  .input {
+    height: 100%;
+    background-color: white;
+    border-radius: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #555555;
+  }
+
+  .dropdown {
+    position: absolute;
+    display: none;
+    background-color: rgba($color: #fff, $alpha: 1);
+    top: 38px;
+    left: -50px;
+    height: 250px;
+    width: 350px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px #5555558d;
+    z-index: 1000;
+
+    .pagination {
+      height: 20%;
+      background-color: #b70011;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 15px;
+      color: #fff;
+      font-weight: bold;
+
+      .btn-arrow {
+        color: white;
+        background: none;
+        font-weight: bold;
+        font-size: 16px;
+
+        &:disabled {
+          color: #555555;
+        }
+      }
+
+      &:hover {
+        .btn-arrow,
+        .selected-year {
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
+  .year-list {
+    height: 80%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    .year-item {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #555555;
+      border-radius: 5px;
+      transition: all ease 0.2s;
+
+      &:hover {
+        cursor: pointer;
+        color: white;
+        background-color: #ca0014;
+      }
+    }
+  }
+}

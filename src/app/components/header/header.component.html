@@ -1,0 +1,30 @@
+<header class="header">
+  <div class="header-content content">
+    <div class="header-content-title">
+      <img src="../../../assets/logo.png" alt="Dreadful Tomato" />
+    </div>
+    <div class="nav" *ngIf="router.url !== '/'">
+      <div class="nav-item" routerLink="movies" routerLinkActive="active">
+        <img src="../../../assets/icon-movies.png" />
+        <p class="nav-item-title">Movies</p>
+      </div>
+      <div class="nav-item" routerLink="series" routerLinkActive="active">
+        <img src="../../../assets/icon-series.png" />
+        <p class="nav-item-title">Series</p>
+      </div>
+    </div>
+    <div class="header-content-controls">
+      <div class="filter" (click)="filterToggle()">
+        <img src="../../../assets/icon-filter.png" />
+        <p>Filters</p>
+      </div>
+      <div class="login">
+        <a href="#">Login</a>
+        <img src="../../../assets/icon-login.png" />
+      </div>
+      <div class="trial-btn">
+        <button>Start your free trial</button>
+      </div>
+    </div>
+  </div>
+</header>
